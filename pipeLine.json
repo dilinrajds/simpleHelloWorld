@@ -1,4 +1,4 @@
 {
-	"git-repo" : "https://github.com/dilinrajds/KarateTest.git",
+	"git-repo" : "https://github.com/dilinrajds/simpleHelloWorld.git",
 	"smoke-suite" : "mvn test -Dtest=TestRunner"
 }
