@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>Karate</groupId>
-	<artifactId>KarateTestScriptsSample</artifactId>
+	<artifactId>KarateTestHelloWorld</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>KarateTestScriptsSample</name>
+	<name>KarateTestHelloWorld</name>
 	<url>http://www.example.com</url>
 
 	<properties>
@@ -24,6 +24,16 @@
 			<version>5.7.1</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.junit/junit-bom -->
+		<!-- https://mvnrepository.com/artifact/org.junit/junit5-api -->
+		<dependency>
+			<groupId>org.junit</groupId>
+			<artifactId>junit5-api</artifactId>
+			<version>5.0.0-ALPHA</version>
+			<scope>test</scope>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-params</artifactId>
@@ -46,6 +56,12 @@
 			<groupId>com.intuit.karate</groupId>
 			<artifactId>karate-core</artifactId>
 			<version>1.2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>net.masterthought</groupId>
+			<artifactId>cucumber-reporting</artifactId>
+			<version>3.8.0</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
