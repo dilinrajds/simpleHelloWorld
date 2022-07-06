@@ -1,0 +1,19 @@
+{
+	"fields": {
+		"project": {
+			"key": "MYF"
+		},
+		"summary": "this bug is related to new Karate Test",
+		"description": "this bug description is coming from the internal feature file",
+		"issuetype": {
+			"name": "Karate Test"
+		},"customfield_10044": {
+			"value" : "Pass"
+		},"customfield_10049" : "18sec",
+		"customfield_10042" : "Scenario 1",
+		"customfield_10043" : "Feature 2",
+		"customfield_10045" : "Release Version 1",
+		"customfield_10046" : "Regression Test",
+		"customfield_10048" : "No Error"
+	}
+}

@@ -1,0 +1,542 @@
+{
+	"expand": "schema,names",
+	"startAt": 0,
+	"maxResults": 50,
+	"total": 3,
+	"issues": [
+		{
+			"expand": "operations,versionedRepresentations,editmeta,changelog,customfield_10010.requestTypePractice,renderedFields",
+			"id": "10731",
+			"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/10731",
+			"key": "MYF-722",
+			"fields": {
+				"statuscategorychangedate": "2022-07-05T18:55:45.269+0530",
+				"issuetype": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issuetype/10008",
+					"id": "10008",
+					"description": "Karate Test",
+					"iconUrl": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium",
+					"name": "Karate Test",
+					"subtask": false,
+					"avatarId": 10300,
+					"hierarchyLevel": 0
+				},
+				"timespent": null,
+				"customfield_10030": null,
+				"project": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/project/10000",
+					"id": "10000",
+					"key": "MYF",
+					"name": "MyFirstProject",
+					"projectTypeKey": "software",
+					"simplified": false,
+					"avatarUrls": {
+						"48x48": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405",
+						"24x24": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=small",
+						"16x16": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=xsmall",
+						"32x32": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=medium"
+					}
+				},
+				"fixVersions": [],
+				"customfield_10034": null,
+				"aggregatetimespent": null,
+				"resolution": null,
+				"customfield_10035": null,
+				"customfield_10036": null,
+				"customfield_10037": null,
+				"customfield_10027": null,
+				"customfield_10028": [],
+				"customfield_10029": null,
+				"resolutiondate": null,
+				"workratio": -1,
+				"watches": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-722/watchers",
+					"watchCount": 1,
+					"isWatching": true
+				},
+				"lastViewed": null,
+				"created": "2022-07-05T18:55:44.672+0530",
+				"customfield_10020": null,
+				"customfield_10021": null,
+				"customfield_10022": null,
+				"customfield_10023": null,
+				"priority": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/priority/3",
+					"iconUrl": "https://vishwasshukla.atlassian.net/images/icons/priorities/medium.svg",
+					"name": "Medium",
+					"id": "3"
+				},
+				"customfield_10024": null,
+				"customfield_10025": null,
+				"labels": [],
+				"customfield_10026": null,
+				"customfield_10016": null,
+				"customfield_10017": null,
+				"customfield_10018": {
+					"hasEpicLinkFieldDependency": false,
+					"showField": false,
+					"nonEditableReason": {
+						"reason": "PLUGIN_LICENSE_ERROR",
+						"message": "The Parent Link is only available to Jira Premium users."
+					}
+				},
+				"customfield_10019": "0|i004hj:",
+				"timeestimate": null,
+				"aggregatetimeoriginalestimate": null,
+				"versions": [],
+				"issuelinks": [],
+				"assignee": null,
+				"updated": "2022-07-05T18:55:44.672+0530",
+				"status": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/status/10000",
+					"description": "",
+					"iconUrl": "https://vishwasshukla.atlassian.net/",
+					"name": "To Do",
+					"id": "10000",
+					"statusCategory": {
+						"self": "https://vishwasshukla.atlassian.net/rest/api/2/statuscategory/2",
+						"id": 2,
+						"key": "new",
+						"colorName": "blue-gray",
+						"name": "To Do"
+					}
+				},
+				"components": [],
+				"timeoriginalestimate": null,
+				"description": null,
+				"customfield_10010": null,
+				"customfield_10014": null,
+				"customfield_10015": null,
+				"customfield_10049": "23.2s",
+				"customfield_10005": null,
+				"customfield_10006": null,
+				"security": null,
+				"customfield_10007": null,
+				"customfield_10008": null,
+				"aggregatetimeestimate": null,
+				"customfield_10009": null,
+				"summary": "test abc summary",
+				"creator": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"subtasks": [],
+				"customfield_10040": null,
+				"customfield_10041": null,
+				"customfield_10042": "test scen",
+				"reporter": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"customfield_10043": "123",
+				"customfield_10044": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/customFieldOption/10020",
+					"value": "Pass",
+					"id": "10020"
+				},
+				"aggregateprogress": {
+					"progress": 0,
+					"total": 0
+				},
+				"customfield_10001": null,
+				"customfield_10045": "31.1",
+				"customfield_10002": null,
+				"customfield_10046": "manual",
+				"customfield_10003": null,
+				"customfield_10004": null,
+				"customfield_10048": "no error",
+				"customfield_10038": null,
+				"customfield_10039": [],
+				"environment": null,
+				"duedate": null,
+				"progress": {
+					"progress": 0,
+					"total": 0
+				},
+				"votes": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-722/votes",
+					"votes": 0,
+					"hasVoted": false
+				}
+			}
+		},
+		{
+			"expand": "operations,versionedRepresentations,editmeta,changelog,customfield_10010.requestTypePractice,renderedFields",
+			"id": "10730",
+			"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/10730",
+			"key": "MYF-721",
+			"fields": {
+				"statuscategorychangedate": "2022-07-05T16:02:28.465+0530",
+				"issuetype": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issuetype/10008",
+					"id": "10008",
+					"description": "Karate Test",
+					"iconUrl": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium",
+					"name": "Karate Test",
+					"subtask": false,
+					"avatarId": 10300,
+					"hierarchyLevel": 0
+				},
+				"timespent": null,
+				"customfield_10030": null,
+				"project": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/project/10000",
+					"id": "10000",
+					"key": "MYF",
+					"name": "MyFirstProject",
+					"projectTypeKey": "software",
+					"simplified": false,
+					"avatarUrls": {
+						"48x48": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405",
+						"24x24": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=small",
+						"16x16": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=xsmall",
+						"32x32": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=medium"
+					}
+				},
+				"fixVersions": [],
+				"aggregatetimespent": null,
+				"customfield_10034": null,
+				"resolution": null,
+				"customfield_10035": null,
+				"customfield_10036": null,
+				"customfield_10037": null,
+				"customfield_10027": null,
+				"customfield_10028": [],
+				"customfield_10029": null,
+				"resolutiondate": null,
+				"workratio": -1,
+				"watches": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-721/watchers",
+					"watchCount": 1,
+					"isWatching": true
+				},
+				"lastViewed": null,
+				"created": "2022-07-05T16:02:28.085+0530",
+				"customfield_10020": null,
+				"customfield_10021": null,
+				"customfield_10022": null,
+				"customfield_10023": null,
+				"priority": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/priority/3",
+					"iconUrl": "https://vishwasshukla.atlassian.net/images/icons/priorities/medium.svg",
+					"name": "Medium",
+					"id": "3"
+				},
+				"customfield_10024": null,
+				"customfield_10025": null,
+				"customfield_10026": null,
+				"labels": [],
+				"customfield_10016": null,
+				"customfield_10017": null,
+				"customfield_10018": {
+					"hasEpicLinkFieldDependency": false,
+					"showField": false,
+					"nonEditableReason": {
+						"reason": "PLUGIN_LICENSE_ERROR",
+						"message": "The Parent Link is only available to Jira Premium users."
+					}
+				},
+				"customfield_10019": "0|i004hb:",
+				"timeestimate": null,
+				"aggregatetimeoriginalestimate": null,
+				"versions": [],
+				"issuelinks": [],
+				"assignee": null,
+				"updated": "2022-07-05T16:02:28.085+0530",
+				"status": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/status/10000",
+					"description": "",
+					"iconUrl": "https://vishwasshukla.atlassian.net/",
+					"name": "To Do",
+					"id": "10000",
+					"statusCategory": {
+						"self": "https://vishwasshukla.atlassian.net/rest/api/2/statuscategory/2",
+						"id": 2,
+						"key": "new",
+						"colorName": "blue-gray",
+						"name": "To Do"
+					}
+				},
+				"components": [],
+				"timeoriginalestimate": null,
+				"description": null,
+				"customfield_10010": null,
+				"customfield_10014": null,
+				"customfield_10015": null,
+				"customfield_10005": null,
+				"customfield_10049": "13ms",
+				"customfield_10006": null,
+				"security": null,
+				"customfield_10007": null,
+				"customfield_10008": null,
+				"aggregatetimeestimate": null,
+				"customfield_10009": null,
+				"summary": "Testing",
+				"creator": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"subtasks": [],
+				"customfield_10040": null,
+				"customfield_10041": null,
+				"customfield_10042": "Testing Name ",
+				"reporter": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"customfield_10043": "abc feature",
+				"aggregateprogress": {
+					"progress": 0,
+					"total": 0
+				},
+				"customfield_10044": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/customFieldOption/10021",
+					"value": "Fail",
+					"id": "10021"
+				},
+				"customfield_10045": "13.4",
+				"customfield_10001": null,
+				"customfield_10046": "Regression",
+				"customfield_10002": null,
+				"customfield_10003": null,
+				"customfield_10004": null,
+				"customfield_10048": "Null pointer issue",
+				"customfield_10038": null,
+				"customfield_10039": [],
+				"environment": null,
+				"duedate": null,
+				"progress": {
+					"progress": 0,
+					"total": 0
+				},
+				"votes": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-721/votes",
+					"votes": 0,
+					"hasVoted": false
+				}
+			}
+		},
+		{
+			"expand": "operations,versionedRepresentations,editmeta,changelog,customfield_10010.requestTypePractice,renderedFields",
+			"id": "10729",
+			"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/10729",
+			"key": "MYF-720",
+			"fields": {
+				"statuscategorychangedate": "2022-07-05T11:21:11.244+0530",
+				"issuetype": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issuetype/10008",
+					"id": "10008",
+					"description": "Karate Test",
+					"iconUrl": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/issuetype/avatar/10300?size=medium",
+					"name": "Karate Test",
+					"subtask": false,
+					"avatarId": 10300,
+					"hierarchyLevel": 0
+				},
+				"timespent": null,
+				"customfield_10030": null,
+				"project": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/project/10000",
+					"id": "10000",
+					"key": "MYF",
+					"name": "MyFirstProject",
+					"projectTypeKey": "software",
+					"simplified": false,
+					"avatarUrls": {
+						"48x48": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405",
+						"24x24": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=small",
+						"16x16": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=xsmall",
+						"32x32": "https://vishwasshukla.atlassian.net/rest/api/2/universal_avatar/view/type/project/avatar/10405?size=medium"
+					}
+				},
+				"fixVersions": [],
+				"aggregatetimespent": null,
+				"customfield_10034": null,
+				"resolution": null,
+				"customfield_10035": null,
+				"customfield_10036": null,
+				"customfield_10037": null,
+				"customfield_10027": null,
+				"customfield_10028": [],
+				"customfield_10029": null,
+				"resolutiondate": null,
+				"workratio": -1,
+				"lastViewed": "2022-07-05T14:35:57.977+0530",
+				"watches": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-720/watchers",
+					"watchCount": 1,
+					"isWatching": true
+				},
+				"created": "2022-07-05T11:21:10.703+0530",
+				"customfield_10020": null,
+				"customfield_10021": null,
+				"customfield_10022": null,
+				"customfield_10023": null,
+				"priority": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/priority/3",
+					"iconUrl": "https://vishwasshukla.atlassian.net/images/icons/priorities/medium.svg",
+					"name": "Medium",
+					"id": "3"
+				},
+				"customfield_10024": null,
+				"customfield_10025": null,
+				"labels": [],
+				"customfield_10026": null,
+				"customfield_10016": null,
+				"customfield_10017": null,
+				"customfield_10018": {
+					"hasEpicLinkFieldDependency": false,
+					"showField": false,
+					"nonEditableReason": {
+						"reason": "PLUGIN_LICENSE_ERROR",
+						"message": "The Parent Link is only available to Jira Premium users."
+					}
+				},
+				"customfield_10019": "0|i004h3:",
+				"aggregatetimeoriginalestimate": null,
+				"timeestimate": null,
+				"versions": [],
+				"issuelinks": [],
+				"assignee": null,
+				"updated": "2022-07-05T12:42:33.500+0530",
+				"status": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/status/10000",
+					"description": "",
+					"iconUrl": "https://vishwasshukla.atlassian.net/",
+					"name": "To Do",
+					"id": "10000",
+					"statusCategory": {
+						"self": "https://vishwasshukla.atlassian.net/rest/api/2/statuscategory/2",
+						"id": 2,
+						"key": "new",
+						"colorName": "blue-gray",
+						"name": "To Do"
+					}
+				},
+				"components": [],
+				"timeoriginalestimate": null,
+				"description": null,
+				"customfield_10010": null,
+				"customfield_10014": null,
+				"customfield_10015": null,
+				"customfield_10049": "Karate Execution Time",
+				"customfield_10005": null,
+				"customfield_10006": null,
+				"customfield_10007": null,
+				"security": null,
+				"customfield_10008": null,
+				"aggregatetimeestimate": null,
+				"customfield_10009": null,
+				"summary": "Karate summary",
+				"creator": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"subtasks": [],
+				"customfield_10040": null,
+				"customfield_10041": null,
+				"customfield_10042": "Karate Scenario",
+				"customfield_10043": "Karate Feature",
+				"reporter": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/user?accountId=626a7bfd07b842006f153197",
+					"accountId": "626a7bfd07b842006f153197",
+					"emailAddress": "vishwasshukla0507@gmail.com",
+					"avatarUrls": {
+						"48x48": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"24x24": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"16x16": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png",
+						"32x32": "https://secure.gravatar.com/avatar/3b993e61a171a1be67e0c65eeb7e1aa0?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FVS-3.png"
+					},
+					"displayName": "Vishwas Shukla",
+					"active": true,
+					"timeZone": "Asia/Calcutta",
+					"accountType": "atlassian"
+				},
+				"customfield_10044": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/customFieldOption/10020",
+					"value": "Pass",
+					"id": "10020"
+				},
+				"aggregateprogress": {
+					"progress": 0,
+					"total": 0
+				},
+				"customfield_10045": "Karate Release",
+				"customfield_10001": null,
+				"customfield_10046": "Karate Test Type",
+				"customfield_10002": null,
+				"customfield_10003": null,
+				"customfield_10048": "Karate Error",
+				"customfield_10004": null,
+				"customfield_10038": null,
+				"customfield_10039": [],
+				"environment": null,
+				"duedate": null,
+				"progress": {
+					"progress": 0,
+					"total": 0
+				},
+				"votes": {
+					"self": "https://vishwasshukla.atlassian.net/rest/api/2/issue/MYF-720/votes",
+					"votes": 0,
+					"hasVoted": false
+				}
+			}
+		}
+	]
+}
