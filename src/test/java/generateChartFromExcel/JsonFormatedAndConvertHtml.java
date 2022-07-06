@@ -155,7 +155,8 @@ public class JsonFormatedAndConvertHtml{
          		+ "	<meta charset=\"utf-8\" />\r\n"
          		+ "	<title>Convert Excel to HTML Table using JavaScript</title>\r\n"
          		+ "	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n"
-         		+ "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n"
+         		+ "    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" "
+         		+ "integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n"
          		+ "\r\n"
          		+ "</head>\r\n"
          		+ "<body>\r\n"
@@ -333,8 +334,10 @@ public class JsonFormatedAndConvertHtml{
    
    public static void main(String[] args) throws JSONException, IOException {
 	  
-	  String jsonFilePath = "target/IssuesJiraTemp.json"; 
-	  String response = new JsonFormatedAndConvertHtml().generateHtml(jsonFilePath);
-	  System.out.println(response);
+		/*
+		  String jsonFilePath = "target/IssuesJiraTemp.json"; String response = new
+		  JsonFormatedAndConvertHtml().generateHtml(jsonFilePath);
+		  System.out.println(response);
+		 */
    }
 }
