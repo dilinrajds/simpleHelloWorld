@@ -35,7 +35,6 @@ public class JsonFormatedAndConvertHtml{
              JSONObject output = new JSONObject();
              JSONObject fields = innerObj.getJSONObject("fields");
              
-             
              String Karatestatus = (String) fields.getJSONObject("customfield_10044").get("value");
              String Date = (String) fields.get("created");
              Date = Date.substring(0, 10);
