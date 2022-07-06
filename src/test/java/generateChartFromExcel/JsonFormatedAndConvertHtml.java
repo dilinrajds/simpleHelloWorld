@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 import org.apache.commons.io.FileUtils;
 import org.json.JSONArray;
@@ -13,18 +14,21 @@ import org.json.JSONObject;
 
 public class JsonFormatedAndConvertHtml{
 	
-   public String generateHtml(String jsonFilePath) throws JSONException, IOException {
+   public String generateHtml(String jsonArrayString) throws JSONException, IOException {
 	   String response = "Pass";
-	  String jsonArrayString = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
+	 // String jsonArrayString = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
       JSONObject input;
-      
+      int pass = 0;
+      int fail = 0;
       JSONArray outputArray =  new JSONArray();
+      JSONObject dateChart = new JSONObject();
+      JSONObject passChart = new JSONObject();
+      JSONObject failChart = new JSONObject();
       try {
          input = new JSONObject(jsonArrayString);
          JSONArray issues = input.getJSONArray("issues");
-         int pass = 0;
-         int fail = 0;
-         
+         String dates[]=new String[issues.length()];
+         int chartDateLength = 0;
          for(int i = 0; i < issues.length();i++) {
              JSONObject innerObj = issues.getJSONObject(i);  
              JSONObject output = new JSONObject();
@@ -32,6 +36,8 @@ public class JsonFormatedAndConvertHtml{
              
              
              String Karatestatus = (String) fields.getJSONObject("customfield_10044").get("value");
+             String Date = (String) fields.get("created");
+             Date = Date.substring(0, 10);
              String KarateExecutionTime = (String) fields.get("customfield_10049");
              String KarateScenario = (String) fields.get("customfield_10042");  
              String KarateFeature = (String) fields.get("customfield_10043");
@@ -45,17 +51,94 @@ public class JsonFormatedAndConvertHtml{
              output.put("Karate Release", KarateRelease);
              output.put("Karate Test Type", KarateTestType);
              output.put("Karate Error", KarateError);
-             output.put("Karates status", Karatestatus);
+             output.put("Karate status", Karatestatus);
+             output.put("Karate Issue Report Date", Date);
+             
+             try {
+            	 if(dateChart.get(Date) != null) {
+            		 int number = (int) dateChart.get(Date);
+            		 number++ ;
+            		 dateChart.put(Date, number);
+            	 }
+             }
+             catch (Exception e) {
+            	 dateChart.put(Date,1);
+            	 dates[chartDateLength] = Date;
+            	 chartDateLength++;
+            	 
+             }
              if(Karatestatus.equalsIgnoreCase("Pass")) {
             	 pass++;
              }else {
             	 fail++;
              }
+             if(Karatestatus.equalsIgnoreCase("Pass")) {
+            	 try {
+                	 if(passChart.get(Date) != null) {
+                		 int number = (int) passChart.get(Date);
+                		 number++ ;
+                		 passChart.put(Date, number);
+                	 }
+                 }
+                 catch (Exception e) {
+                	 passChart.put(Date,1);
+                	 
+                 }
+             }else {
+            	 try {
+                	 if(failChart.get(Date) != null) {
+                		 int number = (int) failChart.get(Date);
+                		 number++ ;
+                		 failChart.put(Date, number);
+                	 }
+                 }
+                 catch (Exception e) {
+                	 failChart.put(Date,1);
+                	 
+                 }
+             }
              outputArray.put(output);
          }
-         
          JSONObject outputArrayFormated =  new JSONObject();
          outputArrayFormated.put("Sheet1", outputArray);
+         
+         
+         //create data string for chart
+         String datesToString = null;
+         int datesvalue[]=new int[dateChart.length()];
+         for(int i = 0; i < dateChart.length();i++) {
+        	 datesvalue[i] = (int) dateChart.get(dates[i]);
+         }
+         
+         for(String date : dates) {
+        	 if(date != null) {
+        		 if(datesToString != null) {
+        			 datesToString = datesToString + ",\"";
+        		 }else {
+        			 datesToString = "[\"";
+        		 }
+        		 datesToString = datesToString + date + "\"" ;
+        	 }
+         }
+         datesToString = datesToString + "]";
+         int failList[]=new int[failChart.names().length()];
+         int passList[]=new int[passChart.names().length()];
+         int fi =0;
+         int pi = 0;
+         for (String keyStr : failChart.keySet()) {
+             int keyvalue = (int) failChart.get(keyStr);
+             failList[fi] =  keyvalue;
+             fi++;
+         }
+         
+         for (String keyStr : passChart.keySet()) {
+             int keyvalue = (int) passChart.get(keyStr);
+             passList[pi] =  keyvalue;
+             pi++;
+         }
+         System.out.println("Date  " +datesToString);
+         System.out.println("Pass  " +Arrays.toString(passList));
+         System.out.println("Fail  " +Arrays.toString(failList));
          
         //JSONArray issues2 = outputArrayFormated.getJSONArray("Sheet1");
         //System.out.println(issues2.length());
@@ -100,7 +183,8 @@ public class JsonFormatedAndConvertHtml{
                 	 bw.write("<th>Karate Release</th>");
                 	 bw.write("<th>Karate Test Type</th>");
                 	 bw.write("<th>Karate Error</th>");
-                	 bw.write("<th>Karates status</th>");
+                	 bw.write("<th>Karate status</th>");
+                	 bw.write("<th>Karate Issue Report Date</th>");
                 	 bw.write("</tr>");
                 	 bw.write("<td>"+innerObj2.get("Karate Scenario")+"</td>");
                 	 bw.write("<td>"+innerObj2.get("Karate Feature")+"</td>");
@@ -108,7 +192,8 @@ public class JsonFormatedAndConvertHtml{
                 	 bw.write("<td>"+innerObj2.get("Karate Release")+"</td>");
                 	 bw.write("<td>"+innerObj2.get("Karate Test Type")+"</td>");
                 	 bw.write("<td>"+innerObj2.get("Karate Error")+"</td>");
-                	 bw.write("<td>"+innerObj2.get("Karates status")+"</td>");
+                	 bw.write("<td>"+innerObj2.get("Karate status")+"</td>");
+                	 bw.write("<td>"+innerObj2.get("Karate Issue Report Date")+"</td>");
 
                  }
                  else
@@ -120,35 +205,124 @@ public class JsonFormatedAndConvertHtml{
                 	 bw.write("<td>"+innerObj2.get("Karate Release")+"</td>");
                 	 bw.write("<td>"+innerObj2.get("Karate Test Type")+"</td>");
                 	 bw.write("<td>"+innerObj2.get("Karate Error")+"</td>");
-                	 bw.write("<td>"+innerObj2.get("Karates status")+"</td>");
+                	 bw.write("<td>"+innerObj2.get("Karate status")+"</td>");
+                	 bw.write("<td>"+innerObj2.get("Karate Issue Report Date")+"</td>");
 
                  }
         	 
          }
         
+         bw.write("<center><embed type=\"text/html\" src=\"Chart.html\" width=\"800\" height=\"500\">");
 
+         bw.write("<center><embed type=\"text/html\" src=\"PieChart.html\" width=\"800\" height=\"500\">");
+         bw.write("<br>");
          bw.write("</div>\r\n"
          		+ "    </div>\r\n"
          		+ "</body>\r\n"
          		+ "</html>");
          bw.close();
           
-         /*try {
-             FileWriter file = new FileWriter("TestKarate.json");
-             file.write(outputArrayFormated.toString());
-             file.close();
-          } catch (IOException e) {
-            
-             e.printStackTrace();
-          }
-         String Response = new JsonToExcelConverterWithoutUpdate().jsonFileToExcelFile("TestKarate.json","TestKarate.xlsx",".xlsx"); // Create excel
          
+         File fc = new File("Chart.html");
+         BufferedWriter bwc = new BufferedWriter(new FileWriter(fc));
          
-         File file = new File("TestKarate.csv");
-         String csv = CDL.toString(outputArray);
-         FileUtils.writeStringToFile(file, csv); // Create csv
-        // System.out.println("Data has been Sucessfully Writeen to "+ file);*/
-        // System.out.println("Doneeeeeeeee");
+         bwc.write("<!DOCTYPE html>\r\n"
+         		+ "<html>\r\n"
+         		+ "<head>\r\n"
+         		+ "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script>\r\n"
+         		+ "</head>\r\n"
+         		+ "\r\n"
+         		+ "<body>\r\n"
+         		+ "   <center><br>\r\n"
+         		+ "    <canvas id=\"bar-chart\" width=\"800\" height=\"400\" style=\"border:1px solid\"></canvas><br>\r\n"
+         		+ "   \r\n"
+         		+ "    <script>\r\n"
+         		+ "     \r\n"
+         		+ "new Chart(document.getElementById(\"bar-chart\"), {\r\n"
+         		+ "    type: 'bar',\r\n"
+         		+ "    data: {\r\n"
+         		+ "      labels: ");
+         bwc.write(datesToString);
+         bwc.write(",\r\n"
+         		+ "      datasets: [\r\n"
+         		+ "        {\r\n"
+         		+ "          label: \"Pass\",\r\n"
+         		+ "          backgroundColor: \"#3e95cd\",\r\n"
+         		+ "          data:");
+         bwc.write(Arrays.toString(passList));
+         
+         bwc.write("}, {\r\n"
+         		+ "          label: \"Fail\",\r\n"
+         		+ "          backgroundColor: \"#8e5ea2\",\r\n"
+         		+ "          data:");
+         
+         bwc.write(Arrays.toString(failList));
+         bwc.write(" }\r\n"
+         		+ "      ]\r\n"
+         		+ "    },\r\n"
+         		+ "    options: {\r\n"
+         		+ "      title: {\r\n"
+         		+ "        display: true,\r\n"
+         		+ "        text: 'Karate Test Report'\r\n"
+         		+ "      },\r\n"
+         		+ "	  responsive: false,\r\n"
+         		+ "	   scales: {\r\n"
+         		+ "        yAxes: [{\r\n"
+         		+ "            ticks: {\r\n"
+         		+ "                beginAtZero: true\r\n"
+         		+ "            }\r\n"
+         		+ "        }]\r\n"
+         		+ "    }\r\n"
+         		+ "    }\r\n"
+         		+ "});\r\n"
+         		+ "    </script>\r\n"
+         		+ "   \r\n"
+         		+ "   \r\n"
+         		+ "</body>\r\n"
+         		+ "</html>");
+     bwc.close();
+     
+     File fp = new File("PieChart.html");
+     BufferedWriter bwp = new BufferedWriter(new FileWriter(fp));
+     bwp.write("<!DOCTYPE html>\r\n"
+     		+ "<html>\r\n"
+     		+ "<head>\r\n"
+     		+ "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script>\r\n"
+     		+ "</head>\r\n"
+     		+ "\r\n"
+     		+ "<body>\r\n"
+     		+ "   <center><br>\r\n"
+     		+ "    <canvas id=\"pie-chart\" width=\"800\" height=\"450\"></canvas>\r\n"
+     		+ "   \r\n"
+     		+ "    <script>\r\n"
+     		+ "     \r\n"
+     		+ "new Chart(document.getElementById(\"pie-chart\"), {\r\n"
+     		+ "    type: 'pie',\r\n"
+     		+ "    data: {\r\n"
+     		+ "      labels: [\"Pass\", \"Fail\"],\r\n"
+     		+ "      datasets: [{\r\n"
+     		+ "        label: \"Population (millions)\",\r\n"
+     		+ "        backgroundColor: [\"#3e95cd\", \"#8e5ea2\"],\r\n"
+     		+ "        data: [");
+     bwp.write(pass+","+fail);
+     bwp.write("]\r\n"
+     		+ "      }]\r\n"
+     		+ "    },\r\n"
+     		+ "    options: {\r\n"
+     		+ "      title: {\r\n"
+     		+ "        display: true,\r\n"
+     		+ "        text: 'Total Test Failure'\r\n"
+     		+ "      },\r\n"
+     		+ "	  responsive: false,\r\n"
+     		+ "    }\r\n"
+     		+ "});\r\n"
+     		+ "    </script>\r\n"
+     		+ "   \r\n"
+     		+ "   \r\n"
+     		+ "</body>\r\n"
+     		+ "</html>");
+     bwp.close();
+     
       }
       catch(Exception e) {
          e.printStackTrace();

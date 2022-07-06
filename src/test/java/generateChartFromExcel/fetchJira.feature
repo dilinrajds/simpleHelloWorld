@@ -13,7 +13,7 @@ Scenario: To create a bug in a particular project
 	Then status 201
 	And print response
 
-Scenario: To get id of an existing issue
+Scenario: To Generate Jira Report
 	And header Authorization = "Basic dmlzaHdhc3NodWtsYTA1MDdAZ21haWwuY29tOmxJTVdpa2lKQ3V3NzBVTEp4Z1VDREM0QQ=="
 	And path 'rest/api/2/search'
 	And param jql = 'project = MYF AND issuetype = "Karate Test" order by created DESC'
@@ -21,7 +21,7 @@ Scenario: To get id of an existing issue
 	When method GET
 	Then status 200
 	And print response	
-	* karate.write(karate.pretty(response), 'IssuesJiraTemp.json')
+	* string responseString = response
 	* def createTable = Java.type("generateChartFromExcel.JsonFormatedAndConvertHtml")
-	* def jsonUri = new createTable().generateHtml("target/IssuesJiraTemp.json")
+	* def jsonUri = new createTable().generateHtml(responseString)
 
