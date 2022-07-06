@@ -16,14 +16,15 @@ public class JsonFormatedAndConvertHtml{
 	
    public String generateHtml(String jsonArrayString) throws JSONException, IOException {
 	   String response = "Pass";
-	 // String jsonArrayString = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
+	 //String jsonArrayString = FileUtils.readFileToString(new File(jsonFilePath), StandardCharsets.UTF_8);
       JSONObject input;
       int pass = 0;
       int fail = 0;
       JSONArray outputArray =  new JSONArray();
-      JSONObject dateChart = new JSONObject();
+      JSONObject chartValue = new JSONObject();
       JSONObject passChart = new JSONObject();
       JSONObject failChart = new JSONObject();
+      
       try {
          input = new JSONObject(jsonArrayString);
          JSONArray issues = input.getJSONArray("issues");
@@ -55,14 +56,14 @@ public class JsonFormatedAndConvertHtml{
              output.put("Karate Issue Report Date", Date);
              
              try {
-            	 if(dateChart.get(Date) != null) {
-            		 int number = (int) dateChart.get(Date);
+            	 if(chartValue.get(Date) != null) {
+            		 int number = (int) chartValue.get(Date);
             		 number++ ;
-            		 dateChart.put(Date, number);
+            		 chartValue.put(Date, number);
             	 }
              }
              catch (Exception e) {
-            	 dateChart.put(Date,1);
+            	 chartValue.put(Date,1);
             	 dates[chartDateLength] = Date;
             	 chartDateLength++;
             	 
@@ -82,7 +83,7 @@ public class JsonFormatedAndConvertHtml{
                  }
                  catch (Exception e) {
                 	 passChart.put(Date,1);
-                	 
+                	 failChart.put(Date,0);
                  }
              }else {
             	 try {
@@ -94,7 +95,7 @@ public class JsonFormatedAndConvertHtml{
                  }
                  catch (Exception e) {
                 	 failChart.put(Date,1);
-                	 
+                	 passChart.put(Date,0);
                  }
              }
              outputArray.put(output);
@@ -103,40 +104,44 @@ public class JsonFormatedAndConvertHtml{
          outputArrayFormated.put("Sheet1", outputArray);
          
          
-         //create data string for chart
-         String datesToString = null;
-         int datesvalue[]=new int[dateChart.length()];
-         for(int i = 0; i < dateChart.length();i++) {
-        	 datesvalue[i] = (int) dateChart.get(dates[i]);
+         //create value in string for chart
+         String chartValueToString = null;
+         int datesvalue[]=new int[chartValue.length()];
+         for(int i = 0; i < chartValue.length();i++) {
+        	 datesvalue[i] = (int) chartValue.get(dates[i]);
          }
          
          for(String date : dates) {
         	 if(date != null) {
-        		 if(datesToString != null) {
-        			 datesToString = datesToString + ",\"";
+        		 if(chartValueToString != null) {
+        			 chartValueToString = chartValueToString + ",\"";
         		 }else {
-        			 datesToString = "[\"";
+        			 chartValueToString = "[\"";
         		 }
-        		 datesToString = datesToString + date + "\"" ;
+        		 chartValueToString = chartValueToString + date + "\"" ;
         	 }
          }
-         datesToString = datesToString + "]";
+         chartValueToString = chartValueToString + "]";
          int failList[]=new int[failChart.names().length()];
          int passList[]=new int[passChart.names().length()];
          int fi =0;
          int pi = 0;
-         for (String keyStr : failChart.keySet()) {
-             int keyvalue = (int) failChart.get(keyStr);
+         for(String date : dates) {
+        	 if(date != null) {
+             int keyvalue = (int) failChart.get(date);
              failList[fi] =  keyvalue;
              fi++;
+        	 }
          }
          
-         for (String keyStr : passChart.keySet()) {
-             int keyvalue = (int) passChart.get(keyStr);
+         for(String date : dates) {
+        	 if(date != null) {
+             int keyvalue = (int) passChart.get(date);
              passList[pi] =  keyvalue;
              pi++;
+        	 }
          }
-         System.out.println("Date  " +datesToString);
+         System.out.println("Date  " +chartValueToString);
          System.out.println("Pass  " +Arrays.toString(passList));
          System.out.println("Fail  " +Arrays.toString(failList));
          
@@ -243,7 +248,7 @@ public class JsonFormatedAndConvertHtml{
          		+ "    type: 'bar',\r\n"
          		+ "    data: {\r\n"
          		+ "      labels: ");
-         bwc.write(datesToString);
+         bwc.write(chartValueToString);
          bwc.write(",\r\n"
          		+ "      datasets: [\r\n"
          		+ "        {\r\n"
@@ -334,10 +339,10 @@ public class JsonFormatedAndConvertHtml{
    
    public static void main(String[] args) throws JSONException, IOException {
 	  
-		/*
+		
 		  String jsonFilePath = "target/IssuesJiraTemp.json"; String response = new
 		  JsonFormatedAndConvertHtml().generateHtml(jsonFilePath);
 		  System.out.println(response);
-		 */
+		 
    }
 }
